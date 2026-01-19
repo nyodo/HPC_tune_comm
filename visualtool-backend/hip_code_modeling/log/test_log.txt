@@ -1,0 +1,30 @@
+=== Config 1: {'use_code': True, 'use_dynamic': True, 'use_ir': True, 'use_cfg': True} ===
+▶ device_exc_time:
+    MAE  : 0.2311
+    MSE  : 0.0534
+    MAPE : 21.50%
+
+=== Config 2: {'use_code': False, 'use_dynamic': True, 'use_ir': True, 'use_cfg': True} ===
+▶ device_exc_time:
+    MAE  : 0.2498
+    MSE  : 0.0624
+    MAPE : 23.24%
+
+=== Config 3: {'use_code': True, 'use_dynamic': False, 'use_ir': True, 'use_cfg': True} ===
+▶ device_exc_time:
+    MAE  : 0.2330
+    MSE  : 0.0543
+    MAPE : 21.67%
+
+=== Config 4: {'use_code': True, 'use_dynamic': True, 'use_ir': False, 'use_cfg': True} ===
+▶ device_exc_time:
+    MAE  : 0.2408
+    MSE  : 0.0580
+    MAPE : 22.40%
+
+=== Config 5: {'use_code': True, 'use_dynamic': True, 'use_ir': True, 'use_cfg': False} ===
+▶ device_exc_time:
+    MAE  : 0.2194
+    MSE  : 0.0481
+    MAPE : 20.41%
+

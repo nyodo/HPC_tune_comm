@@ -1,0 +1,57 @@
+{
+  "name": "misamd_Ind_IO_N2_1",
+  "result_folder": "/thfs3/home/xjtu_cx/AMT-Toolkits/tests/io/tests/IO_AtuoTuneTool",
+  "nodes": 2,
+  "MPI_mode": "mpich",
+  "tasks_per_node": 4,
+  "run_command": "yhrun /thfs3/home/xjtu_cx/lxd/MISA-MD/build/bin/CrystalMD -c misa_config.yaml",
+  "model_name": "misa",
+  "iter_start": 0,
+  "iter_end": null,
+  "train_mode": "new",
+  "save_rounds": 10,
+  "partition": "thmt1",
+  "self_module": null,
+  "self_export": null,
+  "module_load": true,
+  "slurm_shell": {
+    "file_path": "misamd.sh",
+    "parameters": {}
+  },
+  "input_file_1": {
+    "file_path": "FeCuNi.eam.alloy",
+    "parameters": {}
+  },
+  "input_file_2": {
+    "file_path": "misa_config.yaml",
+    "parameters": {
+      "__X__": [
+        "200"
+      ],
+      "__Y__": [
+        "200"
+      ],
+      "__Z__": [
+        "200"
+      ]
+    }
+  },
+  "input_file_3": {
+    "file_path": "romio_hints",
+    "parameters": {
+      "__striping_unit": [
+        "524288",
+        "1048576",
+        "2097152",
+        "4194304",
+        "8388608",
+        "16777216",
+        "33554432"
+      ],
+      "__striping_factor": [
+        "1",
+        "2"
+      ]
+    }
+  }
+}

@@ -1,0 +1,93 @@
+.container {
+    padding: 20px;
+  }
+  
+  h4 {
+    text-align: center;
+    padding-bottom: 10px;
+    font-weight: 800;
+  }
+  
+  .form-section,
+  .result-section {
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    box-shadow: 1px 0px 20px rgba(0, 0, 0, 0.05);
+    min-height: 160px;
+  }
+  
+  .tip-label {
+    color: red;
+    font-size: 14px;
+  }
+  
+  .title-label {
+    font-size: 18px;
+    font-weight: 800;
+  }
+  
+  .tip-label,
+  .title-label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  .small-text {
+    font-size: 14px;
+    color: #a1a7cc;
+    margin-bottom: 5px;
+  }
+  
+  .select-input,
+  .textarea-input {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .button-section {
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  .result-content p {
+    margin: 5px 0;
+  }
+
+  /* 按钮通用样式 */
+.icon-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5em;
+  color: #5e6772;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.icon-button:hover {
+  background-color: #babfc4;
+  color: #010101;
+}
+
+/* 对话框样式 */
+:deep .el-dialog__headerbtn {
+  outline: none;
+}
+
+/* 文件上传框的大小 */
+.upload-demo{
+  width: 300px;
+  height: 200px;
+}
+
+/* 换行符换行 */
+.formatted-text {
+  white-space: pre-wrap; /* 保持空白符序列，但是正常地进行文本换行 */
+  word-wrap: break-word; /* 在长单词或URL地址内部进行换行 */
+}

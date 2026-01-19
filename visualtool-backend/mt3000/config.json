@@ -1,0 +1,43 @@
+{
+  "mt3000_client": {
+    "hostname": "192.168.10.20",
+    "username": "xjtu_cx",
+    "password": "gCWyS6RmwEAT",
+    "proxy_host": "127.0.0.1",
+    "proxy_port": 1080,
+    "ssh_port": 22,
+    "connect_timeout": 10
+  },
+  "collection": {
+    "io": {
+      "remote_paths": {
+        "config_dir": "/thfs3/home/{username}/MCJM-Toolkits/config/IOJM/",
+        "main_script": "/thfs3/home/{username}/MCJM-Toolkits/src/IOJM/main.py",
+        "work_dir": "/thfs3/home/{username}/MCJM-Toolkits/src/IOJM"
+      }
+    },
+    "communication": {
+      "remote_paths": {
+        "config_dir": "/thfs3/home/{username}/MCJM-Toolkits/src/COMM/tune_ucx_with_opentuner/config/",
+        "main_script": "/thfs3/home/{username}/MCJM-Toolkits/src/COMM/tune_ucx_with_opentuner/src/tune_ucx_latency_ping_with_avg_time.py",
+        "work_dir": "/thfs3/home/{username}/MCJM-Toolkits/src/COMM/tune_ucx_with_opentuner",
+        "data_dir": "/thfs3/home/{username}/MCJM-Toolkits/src/COMM/tune_ucx_with_opentuner/data/app_data/",
+        "processed_dir": "/thfs3/home/{username}/MCJM-Toolkits/src/COMM/tune_ucx_with_opentuner/data/processed/"
+      }
+    },
+    "compute": {
+      "remote_paths": {
+        "config_dir": "/thfs3/home/{username}/MCJM-Toolkits/config/COMP/",
+        "main_script": "/thfs3/home/{username}/MCJM-Toolkits/src/COMP/main.py",
+        "work_dir": "/thfs3/home/{username}/MCJM-Toolkits/src/COMP"
+      }
+    },
+    "memory": {
+      "remote_paths": {
+        "config_dir": "/thfs3/home/{username}/MCJM-Toolkits/config/MEM/",
+        "main_script": "/thfs3/home/{username}/MCJM-Toolkits/src/MEM/main.py",
+        "work_dir": "/thfs3/home/{username}/MCJM-Toolkits/src/MEM"
+      }
+    }
+  }
+}

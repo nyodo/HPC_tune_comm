@@ -1,0 +1,116 @@
+#include <hip/hip_runtime.h>
+#include <iostream>
+#include <cstdlib> // for rand()
+
+// 鏍稿嚱鏁板畾涔夛紙淇濇寔涓嶅彉锛?
+__global__ void gauss_all_seidel_backfor(int mne, int nv, int* nc, double* a_ae, double* f,
+                                         int* ne, double* ap, double* con, double* ff)
+{
+    int i = blockIdx.x * blockDim.x + threadIdx.x;
+    if (i < mne)
+    {
+        double tmp_b = 0.0;
+        int j;
+        for (j = nc[i]; j <= nc[i + 1] - 1; j++)
+        {
+            tmp_b += a_ae[j] * f[(nv - 1) * mne + ne[j] - 1];
+        }
+        ff[i] = (tmp_b + con[i]) / ap[i];
+    }
+}
+
+int main(int argc, char* argv[])
+{
+    // 浠庡懡浠よ鑾峰彇 mne 鍜?nv
+    const int mne = std::atoi(argv[1]); // 渚嬪 1024 鎴?2048
+    const int nv = std::atoi(argv[2]);  // 渚嬪 5
+
+    // 鍔ㄦ€佸垎閰嶄富鏈虹鏁扮粍
+    int* h_nc = new int[mne + 1];      // nc 鏁扮粍澶у皬涓?mne+1
+    double* h_a_ae = new double[mne];  // a_ae 鏁扮粍澶у皬涓?mne
+    int* h_ne = new int[mne];          // ne 鏁扮粍澶у皬涓?mne
+    double* h_f = new double[nv * mne]; // f 鏁扮粍澶у皬涓?nv * mne
+    double* h_ap = new double[mne];    // ap 鏁扮粍澶у皬涓?mne
+    double* h_con = new double[mne];   // con 鏁扮粍澶у皬涓?mne
+    double* h_ff = new double[mne];    // ff 鏁扮粍澶у皬涓?mne
+
+    // 鍒濆鍖栦富鏈虹鏁扮粍
+    for (int i = 0; i <= mne; ++i)
+    {
+        h_nc[i] = i; // 绠€鍗曞垵濮嬪寲 nc锛屾瘡涓崟鍏冨搴斾竴涓」
+    }
+    for (int i = 0; i < mne; ++i)
+    {
+        h_ne[i] = (i % mne) + 1; // ne 绱㈠紩鍦?[1, mne] 鑼冨洿鍐?
+        h_a_ae[i] = 1.0;         // a_ae 鍒濆鍖栦负 1.0
+        h_ap[i] = 2.0;           // ap 鍒濆鍖栦负 2.0锛岄伩鍏嶉櫎浠ラ浂
+        h_con[i] = 1.0;          // con 鍒濆鍖栦负 1.0
+        h_ff[i] = 0.0;           // ff 鍒濆鍖栦负 0.0
+    }
+    for (int i = 0; i < nv * mne; ++i)
+    {
+        h_f[i] = (double)(i % 100) / 10.0; // f 鍒濆鍖栦负涓€浜涘彉鍖栫殑鍊?
+    }
+
+    // 鍒嗛厤璁惧绔唴瀛?
+    int *d_nc, *d_ne;
+    double *d_a_ae, *d_f, *d_ap, *d_con, *d_ff;
+    hipMalloc(&d_nc, (mne + 1) * sizeof(int));
+    hipMalloc(&d_ne, mne * sizeof(int));
+    hipMalloc(&d_a_ae, mne * sizeof(double));
+    hipMalloc(&d_f, nv * mne * sizeof(double));
+    hipMalloc(&d_ap, mne * sizeof(double));
+    hipMalloc(&d_con, mne * sizeof(double));
+    hipMalloc(&d_ff, mne * sizeof(double));
+
+    // 灏嗕富鏈烘暟鎹嫹璐濆埌璁惧
+    hipMemcpy(d_nc, h_nc, (mne + 1) * sizeof(int), hipMemcpyHostToDevice);
+    hipMemcpy(d_ne, h_ne, mne * sizeof(int), hipMemcpyHostToDevice);
+    hipMemcpy(d_a_ae, h_a_ae, mne * sizeof(double), hipMemcpyHostToDevice);
+    hipMemcpy(d_f, h_f, nv * mne * sizeof(double), hipMemcpyHostToDevice);
+    hipMemcpy(d_ap, h_ap, mne * sizeof(double), hipMemcpyHostToDevice);
+    hipMemcpy(d_con, h_con, mne * sizeof(double), hipMemcpyHostToDevice);
+
+    // 璁剧疆绾跨▼鍧楀拰缃戞牸澶у皬
+    int threadsPerBlock = 256;
+    int blocksPerGrid = (mne + threadsPerBlock - 1) / threadsPerBlock;
+
+    // 鍚姩鏍稿嚱鏁?
+    hipLaunchKernelGGL(gauss_all_seidel_backfor, dim3(blocksPerGrid), dim3(threadsPerBlock), 0, 0,
+                       mne, nv, d_nc, d_a_ae, d_f, d_ne, d_ap, d_con, d_ff);
+
+    // 绛夊緟璁惧瀹屾垚璁＄畻
+    hipDeviceSynchronize();
+
+    // 灏嗙粨鏋滀粠璁惧鎷峰洖涓绘満
+    hipMemcpy(h_ff, d_ff, mne * sizeof(double), hipMemcpyDeviceToHost);
+
+    // 鎵撳嵃閮ㄥ垎缁撴灉浠ラ獙璇?
+    printf("%d %d\n",mne,nv);
+    std::cout << "鍓?0涓粨鏋? ";
+    for (int i = 0; i < 10 && i < mne; ++i)
+    {
+        std::cout << h_ff[i] << " ";
+    }
+    std::cout << std::endl;
+
+    // 閲婃斁璁惧绔唴瀛?
+    hipFree(d_nc);
+    hipFree(d_ne);
+    hipFree(d_a_ae);
+    hipFree(d_f);
+    hipFree(d_ap);
+    hipFree(d_con);
+    hipFree(d_ff);
+
+    // 閲婃斁涓绘満绔姩鎬佸垎閰嶇殑鍐呭瓨
+    delete[] h_nc;
+    delete[] h_a_ae;
+    delete[] h_ne;
+    delete[] h_f;
+    delete[] h_ap;
+    delete[] h_con;
+    delete[] h_ff;
+
+    return 0;
+}

@@ -1,0 +1,250 @@
+xjtu_cx@ln4:~/zhaoyk/tune_ucx_with_opentuner$ python3 src/tune_ucx_latency_ping_with_avg_time.py
+>>> Not in SLURM environment, allocating nodes...
+>>> Requesting nodes: cn27584,cn27585 on partition thcp3
+>>> Config: test_limit = 50
+>>> Config: no_dups = enabled
+>>> Command: salloc -p thcp3 -N 2 --nodelist cn27584,cn27585 /usr/bin/python3 /thfs3/home/xjtu_cx/zhaoyk/tune_ucx_with_opentuner/src/tune_ucx_latency_ping_with_avg_time.py --test-limit 50 --no-dups
+salloc: Granted job allocation 4100531
+salloc: Waiting for resource configuration
+salloc: Nodes cn[27584-27585] are ready for job
+>>> Running OpenTuner in SLURM job 4100531
+>>> Allocated nodes: cn[27584-27585]
+[Init] Using existing processed data: data/processed/lammps/16node-64proc-1000atom-10interation.csv
+[Init] Script path: src/scripts/run_latency_2_intra-Blade.sh
+[Init] Result directory: result/result_2_Intra-Blade
+[Init] Shell output: disabled
+[Init] Strict test limit enabled: 50 tests
+[Init] OpenTuner log directory: tune_result_avg
+[Init] OpenTuner log: enabled
+--> Log file created at: tune_result_avg/2_intra-Blade/opentuner_log_20260119_193944.txt
+
+[Init] Running Baseline Test (Default Parameters)...
+[Init] Baseline (Default) Time: 42424.15 us
+-----------------------------------------------------------
+
+sysctl: cannot stat /proc/sys/machdep/cpu/brand_string: No such file or directory
+/thfs3/home/xjtu_cx/.local/lib/python3.8/site-packages/opentuner/search/driver.py:183: SAWarning: Object of type <DesiredResult> not in session, add operation along 'TuningRun.desired_results' will not proceed
+  self.session.flush()  # populate configuration_id
+===========================================================
+[Round 1] Testing: RNDV=65536, BCOPY=32768, ZCOPY=512
+   -> Time: 45016.99 us | vs Default: -6.11% (Slower)
+===========================================================
+[Round 2] Testing: RNDV=262144, BCOPY=8192, ZCOPY=16384
+   -> Time: 42914.50 us | vs Default: -1.16% (Slower)
+===========================================================
+[Round 3] Testing: RNDV=4096, BCOPY=2048, ZCOPY=1024
+   -> Time: 147544.58 us | vs Default: -247.78% (Slower)
+===========================================================
+[Round 4] Testing: RNDV=32768, BCOPY=4096, ZCOPY=512
+   -> Time: 44575.60 us | vs Default: -5.07% (Slower)
+[   226s]    INFO opentuner.search.plugin.DisplayPlugin: tests=4, best {'UCX_BCOPY_THRESH_EXP': 13, 'UCX_RNDV_THRESH_EXP': 18, 'UCX_ZCOPY_THRESH_EXP': 14}, cost time=42914.5000, found by RandomNelderMead
+/thfs3/home/xjtu_cx/.local/lib/python3.8/site-packages/opentuner/search/driver.py:183: SAWarning: Object of type <DesiredResult> not in session, add operation along 'TuningRun.desired_results' will not proceed
+  self.session.flush()  # populate configuration_id
+===========================================================
+[Round 5] Testing: RNDV=131072, BCOPY=65536, ZCOPY=32768
+   -> Time: 42975.97 us | vs Default: -1.30% (Slower)
+===========================================================
+[Round 6] Testing: RNDV=131072, BCOPY=32768, ZCOPY=8192
+   -> Time: 41192.41 us | vs Default: +2.90% (Faster)
+===========================================================
+[Round 7] Testing: RNDV=524288, BCOPY=131072, ZCOPY=8192
+   -> Time: 44197.59 us | vs Default: -4.18% (Slower)
+===========================================================
+[Round 8] Testing: RNDV=524288, BCOPY=2048, ZCOPY=2048
+   -> Time: 43110.84 us | vs Default: -1.62% (Slower)
+[   392s]    INFO opentuner.search.plugin.DisplayPlugin: tests=8, best {'UCX_BCOPY_THRESH_EXP': 15, 'UCX_ZCOPY_THRESH_EXP': 13, 'UCX_RNDV_THRESH_EXP': 17}, cost time=41192.4100, found by DifferentialEvolutionAlt
+/thfs3/home/xjtu_cx/.local/lib/python3.8/site-packages/opentuner/search/driver.py:183: SAWarning: Object of type <DesiredResult> not in session, add operation along 'TuningRun.desired_results' will not proceed
+  self.session.flush()  # populate configuration_id
+===========================================================
+[Round 9] Testing: RNDV=524288, BCOPY=131072, ZCOPY=8192
+   -> Time: 45230.68 us | vs Default: -6.62% (Slower)
+===========================================================
+[Round 10] Testing: RNDV=4096, BCOPY=32768, ZCOPY=131072
+   -> Time: 148026.49 us | vs Default: -248.92% (Slower)
+===========================================================
+[Round 11] Testing: RNDV=2048, BCOPY=32768, ZCOPY=8192
+   -> Time: 200429.19 us | vs Default: -372.44% (Slower)
+===========================================================
+[Round 12] Testing: RNDV=2048, BCOPY=32768, ZCOPY=8192
+   -> Time: 204876.64 us | vs Default: -382.92% (Slower)
+[   558s]    INFO opentuner.search.plugin.DisplayPlugin: tests=12, best {'UCX_BCOPY_THRESH_EXP': 15, 'UCX_ZCOPY_THRESH_EXP': 13, 'UCX_RNDV_THRESH_EXP': 17}, cost time=41192.4100, found by DifferentialEvolutionAlt
+/thfs3/home/xjtu_cx/.local/lib/python3.8/site-packages/opentuner/search/driver.py:183: SAWarning: Object of type <DesiredResult> not in session, add operation along 'TuningRun.desired_results' will not proceed
+  self.session.flush()  # populate configuration_id
+===========================================================
+[Round 13] Testing: RNDV=8192, BCOPY=1024, ZCOPY=32768
+   -> Time: 73456.05 us | vs Default: -73.15% (Slower)
+===========================================================
+[Round 14] Testing: RNDV=2048, BCOPY=256, ZCOPY=1024
+   -> Time: 203501.83 us | vs Default: -379.68% (Slower)
+===========================================================
+[Round 15] Testing: RNDV=32768, BCOPY=8192, ZCOPY=1024
+   -> Time: 42159.37 us | vs Default: +0.62% (Faster)
+===========================================================
+[Round 16] Testing: RNDV=1024, BCOPY=4096, ZCOPY=4096
+   -> Time: 252932.93 us | vs Default: -496.20% (Slower)
+[   729s]    INFO opentuner.search.plugin.DisplayPlugin: tests=16, best {'UCX_BCOPY_THRESH_EXP': 15, 'UCX_ZCOPY_THRESH_EXP': 13, 'UCX_RNDV_THRESH_EXP': 17}, cost time=41192.4100, found by DifferentialEvolutionAlt
+/thfs3/home/xjtu_cx/.local/lib/python3.8/site-packages/opentuner/search/driver.py:183: SAWarning: Object of type <DesiredResult> not in session, add operation along 'TuningRun.desired_results' will not proceed
+  self.session.flush()  # populate configuration_id
+===========================================================
+[Round 17] Testing: RNDV=524288, BCOPY=131072, ZCOPY=65536
+   -> Time: 44320.15 us | vs Default: -4.47% (Slower)
+===========================================================
+[Round 18] Testing: RNDV=32768, BCOPY=16384, ZCOPY=4096
+   -> Time: 43872.53 us | vs Default: -3.41% (Slower)
+===========================================================
+[Round 19] Testing: RNDV=524288, BCOPY=131072, ZCOPY=131072
+   -> Time: 43664.71 us | vs Default: -2.92% (Slower)
+===========================================================
+[Round 20] Testing: RNDV=16384, BCOPY=8192, ZCOPY=4096
+   -> Time: 43851.22 us | vs Default: -3.36% (Slower)
+[   897s]    INFO opentuner.search.plugin.DisplayPlugin: tests=20, best {'UCX_BCOPY_THRESH_EXP': 15, 'UCX_ZCOPY_THRESH_EXP': 13, 'UCX_RNDV_THRESH_EXP': 17}, cost time=41192.4100, found by DifferentialEvolutionAlt
+/thfs3/home/xjtu_cx/.local/lib/python3.8/site-packages/opentuner/search/driver.py:183: SAWarning: Object of type <DesiredResult> not in session, add operation along 'TuningRun.desired_results' will not proceed
+  self.session.flush()  # populate configuration_id
+===========================================================
+[Round 21] Testing: RNDV=131072, BCOPY=32768, ZCOPY=4096
+   -> Time: 38919.52 us | vs Default: +8.26% (Faster)
+===========================================================
+[Round 22] Testing: RNDV=131072, BCOPY=16384, ZCOPY=16384
+   -> Time: 45201.39 us | vs Default: -6.55% (Slower)
+===========================================================
+[Round 23] Testing: RNDV=131072, BCOPY=32768, ZCOPY=4096
+   -> Time: 43142.72 us | vs Default: -1.69% (Slower)
+===========================================================
+[Round 24] Testing: RNDV=131072, BCOPY=32768, ZCOPY=4096
+   -> Time: 42530.16 us | vs Default: -0.25% (Slower)
+[  1064s]    INFO opentuner.search.plugin.DisplayPlugin: tests=24, best {'UCX_BCOPY_THRESH_EXP': 15, 'UCX_ZCOPY_THRESH_EXP': 12, 'UCX_RNDV_THRESH_EXP': 17}, cost time=38919.5200, found by NormalGreedyMutation
+/thfs3/home/xjtu_cx/.local/lib/python3.8/site-packages/opentuner/search/driver.py:183: SAWarning: Object of type <DesiredResult> not in session, add operation along 'TuningRun.desired_results' will not proceed
+  self.session.flush()  # populate configuration_id
+===========================================================
+[Round 25] Testing: RNDV=65536, BCOPY=32768, ZCOPY=2048
+   -> Time: 44743.12 us | vs Default: -5.47% (Slower)
+===========================================================
+[Round 26] Testing: RNDV=262144, BCOPY=32768, ZCOPY=2048
+   -> Time: 41970.31 us | vs Default: +1.07% (Faster)
+===========================================================
+[Round 27] Testing: RNDV=131072, BCOPY=32768, ZCOPY=2048
+   -> Time: 42868.43 us | vs Default: -1.05% (Slower)
+===========================================================
+[Round 28] Testing: RNDV=262144, BCOPY=32768, ZCOPY=2048
+   -> Time: 45976.23 us | vs Default: -8.37% (Slower)
+[  1230s]    INFO opentuner.search.plugin.DisplayPlugin: tests=28, best {'UCX_BCOPY_THRESH_EXP': 15, 'UCX_ZCOPY_THRESH_EXP': 12, 'UCX_RNDV_THRESH_EXP': 17}, cost time=38919.5200, found by NormalGreedyMutation
+/thfs3/home/xjtu_cx/.local/lib/python3.8/site-packages/opentuner/search/driver.py:183: SAWarning: Object of type <DesiredResult> not in session, add operation along 'TuningRun.desired_results' will not proceed
+  self.session.flush()  # populate configuration_id
+===========================================================
+[Round 29] Testing: RNDV=131072, BCOPY=32768, ZCOPY=1024
+   -> Time: 43270.04 us | vs Default: -1.99% (Slower)
+===========================================================
+[Round 30] Testing: RNDV=1024, BCOPY=32768, ZCOPY=4096
+   -> Time: 256830.77 us | vs Default: -505.39% (Slower)
+===========================================================
+[Round 31] Testing: RNDV=524288, BCOPY=131072, ZCOPY=4096
+   -> Time: 45391.93 us | vs Default: -7.00% (Slower)
+===========================================================
+[Round 32] Testing: RNDV=8192, BCOPY=2048, ZCOPY=4096
+   -> Time: 72003.15 us | vs Default: -69.72% (Slower)
+[  1395s]    INFO opentuner.search.plugin.DisplayPlugin: tests=32, best {'UCX_BCOPY_THRESH_EXP': 15, 'UCX_ZCOPY_THRESH_EXP': 12, 'UCX_RNDV_THRESH_EXP': 17}, cost time=38919.5200, found by NormalGreedyMutation
+/thfs3/home/xjtu_cx/.local/lib/python3.8/site-packages/opentuner/search/driver.py:183: SAWarning: Object of type <DesiredResult> not in session, add operation along 'TuningRun.desired_results' will not proceed
+  self.session.flush()  # populate configuration_id
+===========================================================
+[Round 33] Testing: RNDV=262144, BCOPY=32768, ZCOPY=8192
+   -> Time: 43244.82 us | vs Default: -1.93% (Slower)
+===========================================================
+[Round 34] Testing: RNDV=65536, BCOPY=65536, ZCOPY=4096
+   -> Time: 42483.79 us | vs Default: -0.14% (Slower)
+===========================================================
+[Round 35] Testing: RNDV=131072, BCOPY=32768, ZCOPY=8192
+   -> Time: 42543.27 us | vs Default: -0.28% (Slower)
+===========================================================
+[Round 36] Testing: RNDV=131072, BCOPY=65536, ZCOPY=4096
+   -> Time: 46394.64 us | vs Default: -9.36% (Slower)
+[  1561s]    INFO opentuner.search.plugin.DisplayPlugin: tests=36, best {'UCX_BCOPY_THRESH_EXP': 15, 'UCX_ZCOPY_THRESH_EXP': 12, 'UCX_RNDV_THRESH_EXP': 17}, cost time=38919.5200, found by NormalGreedyMutation
+/thfs3/home/xjtu_cx/.local/lib/python3.8/site-packages/opentuner/search/driver.py:183: SAWarning: Object of type <DesiredResult> not in session, add operation along 'TuningRun.desired_results' will not proceed
+  self.session.flush()  # populate configuration_id
+===========================================================
+[Round 37] Testing: RNDV=65536, BCOPY=4096, ZCOPY=65536
+   -> Time: 42132.24 us | vs Default: +0.69% (Faster)
+===========================================================
+[Round 38] Testing: RNDV=65536, BCOPY=2048, ZCOPY=1024
+   -> Time: 45668.91 us | vs Default: -7.65% (Slower)
+===========================================================
+[Round 39] Testing: RNDV=8192, BCOPY=4096, ZCOPY=8192
+   -> Time: 71233.22 us | vs Default: -67.91% (Slower)
+===========================================================
+[Round 40] Testing: RNDV=32768, BCOPY=1024, ZCOPY=131072
+   -> Time: 44334.30 us | vs Default: -4.50% (Slower)
+[  1726s]    INFO opentuner.search.plugin.DisplayPlugin: tests=40, best {'UCX_BCOPY_THRESH_EXP': 15, 'UCX_ZCOPY_THRESH_EXP': 12, 'UCX_RNDV_THRESH_EXP': 17}, cost time=38919.5200, found by NormalGreedyMutation
+/thfs3/home/xjtu_cx/.local/lib/python3.8/site-packages/opentuner/search/driver.py:183: SAWarning: Object of type <DesiredResult> not in session, add operation along 'TuningRun.desired_results' will not proceed
+  self.session.flush()  # populate configuration_id
+===========================================================
+[Round 41] Testing: RNDV=524288, BCOPY=131072, ZCOPY=262144
+   -> Time: 43884.23 us | vs Default: -3.44% (Slower)
+===========================================================
+[Round 42] Testing: RNDV=131072, BCOPY=65536, ZCOPY=4096
+   -> Time: 40567.41 us | vs Default: +4.38% (Faster)
+===========================================================
+[Round 43] Testing: RNDV=8192, BCOPY=32768, ZCOPY=4096
+   -> Time: 73778.92 us | vs Default: -73.91% (Slower)
+===========================================================
+[Round 44] Testing: RNDV=131072, BCOPY=32768, ZCOPY=1024
+   -> Time: 44356.69 us | vs Default: -4.56% (Slower)
+[  1895s]    INFO opentuner.search.plugin.DisplayPlugin: tests=44, best {'UCX_BCOPY_THRESH_EXP': 15, 'UCX_ZCOPY_THRESH_EXP': 12, 'UCX_RNDV_THRESH_EXP': 17}, cost time=38919.5200, found by NormalGreedyMutation
+/thfs3/home/xjtu_cx/.local/lib/python3.8/site-packages/opentuner/search/driver.py:183: SAWarning: Object of type <DesiredResult> not in session, add operation along 'TuningRun.desired_results' will not proceed
+  self.session.flush()  # populate configuration_id
+===========================================================
+[Round 45] Testing: RNDV=262144, BCOPY=65536, ZCOPY=65536
+   -> Time: 45294.82 us | vs Default: -6.77% (Slower)
+===========================================================
+[Round 46] Testing: RNDV=131072, BCOPY=16384, ZCOPY=4096
+   -> Time: 44645.56 us | vs Default: -5.24% (Slower)
+===========================================================
+[Round 47] Testing: RNDV=131072, BCOPY=16384, ZCOPY=2048
+   -> Time: 44690.15 us | vs Default: -5.34% (Slower)
+===========================================================
+[Round 48] Testing: RNDV=131072, BCOPY=16384, ZCOPY=4096
+   -> Time: 43616.58 us | vs Default: -2.81% (Slower)
+[  2060s]    INFO opentuner.search.plugin.DisplayPlugin: tests=48, best {'UCX_BCOPY_THRESH_EXP': 15, 'UCX_ZCOPY_THRESH_EXP': 12, 'UCX_RNDV_THRESH_EXP': 17}, cost time=38919.5200, found by NormalGreedyMutation
+/thfs3/home/xjtu_cx/.local/lib/python3.8/site-packages/opentuner/search/driver.py:183: SAWarning: Object of type <DesiredResult> not in session, add operation along 'TuningRun.desired_results' will not proceed
+  self.session.flush()  # populate configuration_id
+===========================================================
+[Round 49] Testing: RNDV=262144, BCOPY=16384, ZCOPY=16384
+   -> Time: 41763.79 us | vs Default: +1.56% (Faster)
+===========================================================
+[Round 50] Testing: RNDV=262144, BCOPY=32768, ZCOPY=32768
+   -> Time: 42891.91 us | vs Default: -1.10% (Slower)
+
+============================================================
+>>> Test limit reached! Completed 50/50 tests.
+>>> Best result found in Round 21: 38919.52 us
+============================================================
+
+
+===========================================================
+>>> STRICT LIMIT: Test #51 skipped (limit: 50)
+>>> OpenTuner may try more tests, but they will all be skipped.
+===========================================================
+
+===========================================================
+>>> STRICT LIMIT: Test #52 skipped (limit: 50)
+>>> OpenTuner may try more tests, but they will all be skipped.
+===========================================================
+[  2142s]    INFO opentuner.search.plugin.DisplayPlugin: tests=52, best {'UCX_BCOPY_THRESH_EXP': 15, 'UCX_ZCOPY_THRESH_EXP': 12, 'UCX_RNDV_THRESH_EXP': 17}, cost time=38919.5200, found by NormalGreedyMutation
+[  2142s]    INFO opentuner.search.plugin.DisplayPlugin: tests=52, best {'UCX_BCOPY_THRESH_EXP': 15, 'UCX_ZCOPY_THRESH_EXP': 12, 'UCX_RNDV_THRESH_EXP': 17}, cost time=38919.5200, found by NormalGreedyMutation
+
+
+###########################################################
+                 OPTIMIZATION SUMMARY
+###########################################################
+ Total Tests Executed    : 52
+ Configured Limit        : 50
+ Best Parameters Found in [Round 21]:
+   RNDV : 131072
+   BCOPY: 32768
+   ZCOPY: 4096
+-----------------------------------------------------------
+ Baseline (Default) Time : 42424.15 us
+ Optimized (Best) Time   : 38919.52 us
+ Speedup                 : 1.09x
+ Improvement             : 8.26%
+###########################################################
+
+salloc: Relinquishing job allocation 4100531

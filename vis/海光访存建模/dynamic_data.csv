@@ -1,0 +1,7 @@
+kernel-name,dispatch,gpu-id,queue-id,queue-index,tid,grd,wgr,lds,scr,vgpr,sgpr,fbar,sig,time,VALUBusy,performance,LDSInsts,LDSBankConflict,L1MemoryBusy,L1MemoryStalled,L2WriteUnitStalled,L2CacheHit,mne,nv
+_Z24gauss_all_seidel_backforiiPiPdS0_S_S0_S0_S0_,8,0,0,20,17948,1024,256,0,0,3,2,0,0x0,1.4e-05,0.101278,8.100951,0,0.0,1.069343,0.134161,0.0,4.790419,1024,6
+_Z24gauss_all_seidel_backforiiPiPdS0_S_S0_S0_S0_,8,0,0,16,18047,2048,256,0,0,3,2,0,0x0,1.3e-05,0.22194,17.752324,0,0.0,2.242463,0.283911,0.0,3.128834,2048,6
+_Z24gauss_all_seidel_backforiiPiPdS0_S_S0_S0_S0_,8,0,0,20,17923,1024,256,0,0,3,2,0,0x0,1.4e-05,0.103628,8.28891,0,0.0,1.223353,0.145349,0.0,4.290822,1024,5
+_Z24gauss_all_seidel_backforiiPiPdS0_S_S0_S0_S0_,8,0,0,20,17987,1024,256,0,0,3,2,0,0x0,1.3e-05,0.111737,8.937473,0,0.0,1.291502,0.140759,0.0,4.290822,1024,7
+_Z24gauss_all_seidel_backforiiPiPdS0_S_S0_S0_S0_,8,0,0,16,18005,2048,256,0,0,3,2,0,0x0,1.4e-05,0.203038,16.240353,0,0.0,2.187269,0.282143,0.0,3.125,2048,5
+_Z24gauss_all_seidel_backforiiPiPdS0_S_S0_S0_S0_,8,0,0,16,18065,2048,256,0,0,3,2,0,0x0,1.4e-05,0.201381,16.107834,0,0.0,2.084423,0.23015,0.0,3.766707,2048,7

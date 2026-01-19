@@ -1,0 +1,71 @@
+
+
+h1, h2, h3, h4, h5, h6, .font-primary {
+  font-family: "Raleway", sans-serif;
+}
+
+
+/*--------------------------------------------------------------
+# Sections General
+--------------------------------------------------------------*/
+section {
+  padding: 20px 0;
+}
+
+.section-bg {
+  background-color: #f5f9fc;
+}
+
+.section-title {
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+.section-title h2 {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  padding-bottom: 0;
+  color: #5c768d;
+}
+
+.section-title p {
+  margin-bottom: 0;
+}
+/* 页脚 */
+#footer {
+  background: #dedfe9;
+  padding: 0 0 20px 0;
+  font-size: 14px;
+  height: 70px;
+}
+#footer .copyright {
+  text-align: center;
+  padding-top: 20px;
+  color: #333;
+}
+#footer .copyright a{
+  color: #6c757d;
+  cursor: pointer;
+}
+
+#footer .credits {
+  padding-top: 10px;
+  text-align: center;
+  font-size: 13px;
+  color: #fff;
+}
+
+#footer .credits a {
+  color: #9eccf4;
+}
+/* end页脚 */
+
+/* 页脚布局 */
+.foot-container{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  height: calc(100vh - 70px);
+}
+/* end页脚布局 */

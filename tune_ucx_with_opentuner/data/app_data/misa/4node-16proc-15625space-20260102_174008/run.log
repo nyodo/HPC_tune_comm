@@ -1,0 +1,55 @@
+srun: Job 4049694 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for job 4049694
+[S] P0:env:mpi env is initialized.
+[0;35m[D] P0:domain:ranks 16
+[0m[0m[V] P0:domain:Initializing GlobalDomain decomposition.
+[0m[0m[V] P0:domain:Initialization done.
+[0m[0;34m[I] P0:sim:number of total atoms on this system: 31250
+[0m[0;34m[I] P0:sim:first step comm time: 0.006585148999874946
+[0m[0;34m[I] P0:sim:first step compute time: 0.016556920999846625
+[0m[0m[V] P0:simulation:Start simulation.
+[0m[0;32m[S] P0:simulation:simulating steps: 1/18[0m[0;34m[I] P0:simulation:simulated physical time: 0.001 ps.
+[0m[0;34m[I] P0:thermo: step: 0 phy_time: 0.001 kinetic energy: 2.33412e+07 temperature: 598.908 potential energy: -128377
+[0m[0;32m[S] P0:simulation:simulating steps: 2/18[0m[0;34m[I] P0:simulation:simulated physical time: 0.002 ps.
+[0m[0;34m[I] P0:thermo: step: 1 phy_time: 0.002 kinetic energy: 2.32162e+07 temperature: 595.701 potential energy: -128364
+[0m[0;32m[S] P0:simulation:simulating steps: 3/18[0m[0;34m[I] P0:simulation:simulated physical time: 0.003 ps.
+[0m[0;34m[I] P0:thermo: step: 2 phy_time: 0.003 kinetic energy: 2.31765e+07 temperature: 594.685 potential energy: -128343
+[0m[0;32m[S] P0:simulation:simulating steps: 4/18[0m[0;34m[I] P0:simulation:simulated physical time: 0.004 ps.
+[0m[0;34m[I] P0:thermo: step: 3 phy_time: 0.004 kinetic energy: 2.28897e+07 temperature: 587.325 potential energy: -128313
+[0m[0;32m[S] P0:simulation:simulating steps: 5/18[0m[0;34m[I] P0:simulation:simulated physical time: 0.0041 ps.
+[0m[0;34m[I] P0:thermo: step: 4 phy_time: 0.0041 kinetic energy: 2.28568e+07 temperature: 586.479 potential energy: -128310
+[0m[0;32m[S] P0:simulation:simulating steps: 6/18[0m[0;34m[I] P0:simulation:simulated physical time: 0.004200000000000001 ps.
+[0m[0;34m[I] P0:thermo: step: 5 phy_time: 0.0042 kinetic energy: 2.28949e+07 temperature: 587.457 potential energy: -128306
+[0m[0;32m[S] P0:simulation:simulating steps: 7/18[0m[0;34m[I] P0:simulation:simulated physical time: 0.004300000000000001 ps.
+[0m[0;34m[I] P0:thermo: step: 6 phy_time: 0.0043 kinetic energy: 2.28604e+07 temperature: 586.572 potential energy: -128303
+[0m[0;32m[S] P0:simulation:simulating steps: 8/18[0m[0;34m[I] P0:simulation:simulated physical time: 0.004400000000000001 ps.
+[0m[0;34m[I] P0:thermo: step: 7 phy_time: 0.0044 kinetic energy: 2.28251e+07 temperature: 585.668 potential energy: -128299
+[0m[0;32m[S] P0:simulation:simulating steps: 9/18[0m[0;34m[I] P0:simulation:simulated physical time: 0.004500000000000001 ps.
+[0m[0;34m[I] P0:thermo: step: 8 phy_time: 0.0045 kinetic energy: 2.27892e+07 temperature: 584.744 potential energy: -128295
+[0m[0;32m[S] P0:simulation:simulating steps: 10/18[0m[0;34m[I] P0:simulation:simulated physical time: 0.004600000000000002 ps.
+[0m[0;34m[I] P0:thermo: step: 9 phy_time: 0.0046 kinetic energy: 2.27524e+07 temperature: 583.802 potential energy: -128291
+[0m[0;32m[S] P0:simulation:simulating steps: 11/18[0m[0;34m[I] P0:simulation:simulated physical time: 0.004700000000000002 ps.
+[0m[0;34m[I] P0:thermo: step: 10 phy_time: 0.0047 kinetic energy: 2.27149e+07 temperature: 582.84 potential energy: -128287
+[0m[0;32m[S] P0:simulation:simulating steps: 12/18[0m[0;34m[I] P0:simulation:simulated physical time: 0.004800000000000002 ps.
+[0m[0;34m[I] P0:thermo: step: 11 phy_time: 0.0048 kinetic energy: 2.26767e+07 temperature: 581.86 potential energy: -128284
+[0m[0;32m[S] P0:simulation:simulating steps: 13/18[0m[0;34m[I] P0:simulation:simulated physical time: 0.005800000000000002 ps.
+[0m[0;34m[I] P0:thermo: step: 12 phy_time: 0.0058 kinetic energy: 2.22554e+07 temperature: 571.049 potential energy: -128240
+[0m[0;32m[S] P0:simulation:simulating steps: 14/18[0m[0;34m[I] P0:simulation:simulated physical time: 0.006800000000000002 ps.
+[0m[0;34m[I] P0:thermo: step: 13 phy_time: 0.0068 kinetic energy: 2.17662e+07 temperature: 558.496 potential energy: -128189
+[0m[0;32m[S] P0:simulation:simulating steps: 15/18[0m[0;34m[I] P0:simulation:simulated physical time: 0.007800000000000002 ps.
+[0m[0;34m[I] P0:thermo: step: 14 phy_time: 0.0078 kinetic energy: 2.12146e+07 temperature: 544.344 potential energy: -128132
+[0m[0;32m[S] P0:simulation:simulating steps: 16/18[0m[0;34m[I] P0:simulation:simulated physical time: 0.008800000000000002 ps.
+[0m[0;34m[I] P0:thermo: step: 15 phy_time: 0.0088 kinetic energy: 2.06067e+07 temperature: 528.744 potential energy: -128069
+[0m[0;32m[S] P0:simulation:simulating steps: 17/18[0m[0;34m[I] P0:simulation:simulated physical time: 0.009800000000000003 ps.
+[0m[0;34m[I] P0:thermo: step: 16 phy_time: 0.0098 kinetic energy: 1.99484e+07 temperature: 511.853 potential energy: -128000
+[0m[0;32m[S] P0:simulation:simulating steps: 18/18[0m[0;34m[I] P0:simulation:simulated physical time: 0.010800000000000004 ps.
+[0m[0;34m[I] P0:thermo: step: 17 phy_time: 0.0108 kinetic energy: 1.92461e+07 temperature: 493.833 potential energy: -127928
+[0m[0;34m[I] P0:simulation:loop comm time: 0.10242105000043011.
+[0m[0;34m[I] P0:simulation:loop compute time: 0.4036836179989223.
+[0m[0;34m[I] P0:dump:time of dumping atoms in copy mode: 0.0.
+[0m[0;34m[I] P0:dump:time of dumping atoms in copy mode: 0.0.
+[0m[0;34m[I] P0:simulation:total time: 0.5553620720002073.
+[0m[0;32m[S] P0:simulation:finalizing simulation
+[0m[0;34m[I] P0:simulation:total wall clock of program: 0.6474386299996695
+[0m[0m[V] P0:app:app was detached.
+[0m

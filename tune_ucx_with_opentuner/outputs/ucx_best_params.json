@@ -1,0 +1,19 @@
+{
+    "UCX_RNDV_THRESH": 32768,
+    "UCX_BCOPY_THRESH": 4096,
+    "UCX_ZCOPY_THRESH": 65536,
+    "Raw_Exponents": {
+        "UCX_BCOPY_THRESH_EXP": 12,
+        "UCX_ZCOPY_THRESH_EXP": 16,
+        "UCX_RNDV_THRESH_EXP": 15
+    },
+    "metrics": {
+        "default_time_us": 42454.65,
+        "optimized_time_us": 40153.49,
+        "improvement_percent": 5.420277872977409,
+        "speedup": 1.0573090906917433,
+        "best_round": 19,
+        "total_tests": 52,
+        "test_limit": 50
+    }
+}

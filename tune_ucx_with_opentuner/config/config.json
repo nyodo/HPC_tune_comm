@@ -1,0 +1,28 @@
+{
+  "cluster": {
+    "partition": "normal",
+    "nodes": [
+      "g14r3n04",
+      "g15r2n09"
+
+    ]
+  },
+  "benchmark": {
+    "raw_file_dir":"data/app_data/astro_demo_16_node",
+    "csv_file": "data/processed/lammps/astro_demo_16_node.csv",
+    "comm_types": [
+      54
+    ]
+  },
+  "script_shell":{
+    "script_path": "src/scripts/run_latency_2_intra-Blade.sh",
+    "result_dir": "result/result_2_Intra-Blade",
+    "save_shell_output": false
+  },
+  "opentuner": {
+    "test_limit": 50,
+    "no_dups": true,
+    "opentuner_log_dir": "tune_result_avg",
+    "save_opentuner_log": true
+  }
+}

@@ -1,0 +1,33 @@
+--> Log file created at: tune_result_avg/2_intra-Blade/opentuner_log_20260110_185434.txt
+
+[Init] Running Baseline Test (Default Parameters)...
+[Init] Baseline (Default) Time: 44024.07 us
+-----------------------------------------------------------
+
+===========================================================
+[Round 1] Testing: RNDV=2048, BCOPY=65536, ZCOPY=2048
+   -> Time: 331846.13 us | vs Default: -653.78% (Slower)
+===========================================================
+[Round 2] Testing: RNDV=65536, BCOPY=512, ZCOPY=32768
+   -> Time: 43095.78 us | vs Default: +2.11% (Faster)
+===========================================================
+[Round 3] Testing: RNDV=524288, BCOPY=8192, ZCOPY=8192
+   -> Time: 48271.52 us | vs Default: -9.65% (Slower)
+===========================================================
+[Round 4] Testing: RNDV=8192, BCOPY=256, ZCOPY=4096
+   -> Time: 103593.63 us | vs Default: -135.31% (Slower)
+===========================================================
+[Round 5] Testing: RNDV=131072, BCOPY=256, ZCOPY=4096
+   -> Time: 43804.35 us | vs Default: +0.50% (Faster)
+===========================================================
+[Round 6] Testing: RNDV=2048, BCOPY=4096, ZCOPY=32768
+   -> Time: 327353.89 us | vs Default: -643.58% (Slower)
+===========================================================
+[Round 7] Testing: RNDV=2048, BCOPY=4096, ZCOPY=512
+   -> Time: 331952.29 us | vs Default: -654.02% (Slower)
+===========================================================
+[Round 8] Testing: RNDV=1024, BCOPY=8192, ZCOPY=32768
+Error: Command '['bash', 'src/scripts/run_latency_2_intra-Blade.sh']' returned non-zero exit status 143.
+   -> Error in execution
+===========================================================
+[Round 9] Testing: RNDV=65536, BCOPY=512, ZCOPY=2048

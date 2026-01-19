@@ -1,0 +1,190 @@
+--> Log file created at: tune_result_avg/2_intra-Blade/opentuner_log_20260110_191918.txt
+
+[Init] Running Baseline Test (Default Parameters)...
+[Init] Baseline (Default) Time: 42454.65 us
+-----------------------------------------------------------
+
+===========================================================
+[Round 1] Testing: RNDV=4096, BCOPY=1024, ZCOPY=512
+   -> Time: 150795.26 us | vs Default: -255.19% (Slower)
+===========================================================
+[Round 2] Testing: RNDV=1024, BCOPY=4096, ZCOPY=262144
+   -> Time: 253249.98 us | vs Default: -496.52% (Slower)
+===========================================================
+[Round 3] Testing: RNDV=4096, BCOPY=32768, ZCOPY=4096
+   -> Time: 143173.38 us | vs Default: -237.24% (Slower)
+===========================================================
+[Round 4] Testing: RNDV=8192, BCOPY=512, ZCOPY=131072
+   -> Time: 73967.10 us | vs Default: -74.23% (Slower)
+===========================================================
+[Round 5] Testing: RNDV=524288, BCOPY=512, ZCOPY=131072
+   -> Time: 44099.35 us | vs Default: -3.87% (Slower)
+===========================================================
+[Round 6] Testing: RNDV=1024, BCOPY=512, ZCOPY=131072
+   -> Time: 260037.44 us | vs Default: -512.51% (Slower)
+===========================================================
+[Round 7] Testing: RNDV=8192, BCOPY=131072, ZCOPY=131072
+   -> Time: 70459.40 us | vs Default: -65.96% (Slower)
+===========================================================
+[Round 8] Testing: RNDV=8192, BCOPY=512, ZCOPY=32768
+   -> Time: 73131.30 us | vs Default: -72.26% (Slower)
+===========================================================
+[Round 9] Testing: RNDV=2048, BCOPY=65536, ZCOPY=131072
+   -> Time: 204413.28 us | vs Default: -381.49% (Slower)
+===========================================================
+[Round 10] Testing: RNDV=32768, BCOPY=16384, ZCOPY=65536
+   -> Time: 44218.61 us | vs Default: -4.15% (Slower)
+===========================================================
+[Round 11] Testing: RNDV=4096, BCOPY=4096, ZCOPY=512
+   -> Time: 145078.03 us | vs Default: -241.72% (Slower)
+===========================================================
+[Round 12] Testing: RNDV=262144, BCOPY=512, ZCOPY=65536
+   -> Time: 42820.79 us | vs Default: -0.86% (Slower)
+===========================================================
+[Round 13] Testing: RNDV=65536, BCOPY=512, ZCOPY=65536
+   -> Time: 43692.78 us | vs Default: -2.92% (Slower)
+===========================================================
+[Round 14] Testing: RNDV=262144, BCOPY=256, ZCOPY=65536
+   -> Time: 41728.45 us | vs Default: +1.71% (Faster)
+===========================================================
+[Round 15] Testing: RNDV=131072, BCOPY=512, ZCOPY=65536
+   -> Time: 44289.77 us | vs Default: -4.32% (Slower)
+===========================================================
+[Round 16] Testing: RNDV=262144, BCOPY=256, ZCOPY=65536
+   -> Time: 42841.71 us | vs Default: -0.91% (Slower)
+===========================================================
+[Round 17] Testing: RNDV=2048, BCOPY=2048, ZCOPY=2048
+   -> Time: 203644.91 us | vs Default: -379.68% (Slower)
+===========================================================
+[Round 18] Testing: RNDV=524288, BCOPY=512, ZCOPY=16384
+   -> Time: 43486.49 us | vs Default: -2.43% (Slower)
+===========================================================
+[Round 19] Testing: RNDV=32768, BCOPY=4096, ZCOPY=65536
+   -> Time: 40153.49 us | vs Default: +5.42% (Faster)
+===========================================================
+[Round 20] Testing: RNDV=65536, BCOPY=131072, ZCOPY=1024
+   -> Time: 45492.46 us | vs Default: -7.16% (Slower)
+===========================================================
+[Round 21] Testing: RNDV=2048, BCOPY=131072, ZCOPY=8192
+   -> Time: 199465.37 us | vs Default: -369.83% (Slower)
+===========================================================
+[Round 22] Testing: RNDV=32768, BCOPY=8192, ZCOPY=131072
+   -> Time: 42951.55 us | vs Default: -1.17% (Slower)
+===========================================================
+[Round 23] Testing: RNDV=524288, BCOPY=512, ZCOPY=131072
+   -> Time: 45815.83 us | vs Default: -7.92% (Slower)
+===========================================================
+[Round 24] Testing: RNDV=16384, BCOPY=2048, ZCOPY=262144
+   -> Time: 44427.95 us | vs Default: -4.65% (Slower)
+===========================================================
+[Round 25] Testing: RNDV=32768, BCOPY=4096, ZCOPY=131072
+   -> Time: 40784.58 us | vs Default: +3.93% (Faster)
+===========================================================
+[Round 26] Testing: RNDV=32768, BCOPY=1024, ZCOPY=65536
+   -> Time: 42810.59 us | vs Default: -0.84% (Slower)
+===========================================================
+[Round 27] Testing: RNDV=32768, BCOPY=4096, ZCOPY=32768
+   -> Time: 44167.97 us | vs Default: -4.04% (Slower)
+===========================================================
+[Round 28] Testing: RNDV=8192, BCOPY=4096, ZCOPY=65536
+   -> Time: 69922.44 us | vs Default: -64.70% (Slower)
+===========================================================
+[Round 29] Testing: RNDV=65536, BCOPY=32768, ZCOPY=4096
+   -> Time: 43021.92 us | vs Default: -1.34% (Slower)
+===========================================================
+[Round 30] Testing: RNDV=4096, BCOPY=8192, ZCOPY=2048
+   -> Time: 144850.84 us | vs Default: -241.19% (Slower)
+===========================================================
+[Round 31] Testing: RNDV=131072, BCOPY=512, ZCOPY=2048
+   -> Time: 44895.40 us | vs Default: -5.75% (Slower)
+===========================================================
+[Round 32] Testing: RNDV=8192, BCOPY=65536, ZCOPY=131072
+   -> Time: 72012.87 us | vs Default: -69.62% (Slower)
+===========================================================
+[Round 33] Testing: RNDV=32768, BCOPY=4096, ZCOPY=262144
+   -> Time: 43362.74 us | vs Default: -2.14% (Slower)
+===========================================================
+[Round 34] Testing: RNDV=16384, BCOPY=256, ZCOPY=512
+   -> Time: 42147.75 us | vs Default: +0.72% (Faster)
+===========================================================
+[Round 35] Testing: RNDV=32768, BCOPY=32768, ZCOPY=512
+   -> Time: 44071.02 us | vs Default: -3.81% (Slower)
+===========================================================
+[Round 36] Testing: RNDV=16384, BCOPY=4096, ZCOPY=65536
+   -> Time: 45171.47 us | vs Default: -6.40% (Slower)
+===========================================================
+[Round 37] Testing: RNDV=65536, BCOPY=8192, ZCOPY=32768
+   -> Time: 42066.63 us | vs Default: +0.91% (Faster)
+===========================================================
+[Round 38] Testing: RNDV=32768, BCOPY=8192, ZCOPY=65536
+   -> Time: 42546.13 us | vs Default: -0.22% (Slower)
+===========================================================
+[Round 39] Testing: RNDV=32768, BCOPY=2048, ZCOPY=65536
+   -> Time: 42845.81 us | vs Default: -0.92% (Slower)
+===========================================================
+[Round 40] Testing: RNDV=32768, BCOPY=8192, ZCOPY=65536
+   -> Time: 41219.27 us | vs Default: +2.91% (Faster)
+===========================================================
+[Round 41] Testing: RNDV=65536, BCOPY=256, ZCOPY=512
+   -> Time: 45447.27 us | vs Default: -7.05% (Slower)
+===========================================================
+[Round 42] Testing: RNDV=524288, BCOPY=4096, ZCOPY=4096
+   -> Time: 45184.92 us | vs Default: -6.43% (Slower)
+===========================================================
+[Round 43] Testing: RNDV=32768, BCOPY=1024, ZCOPY=2048
+   -> Time: 42318.21 us | vs Default: +0.32% (Faster)
+===========================================================
+[Round 44] Testing: RNDV=262144, BCOPY=65536, ZCOPY=8192
+   -> Time: 43789.16 us | vs Default: -3.14% (Slower)
+===========================================================
+[Round 45] Testing: RNDV=32768, BCOPY=8192, ZCOPY=32768
+   -> Time: 40698.44 us | vs Default: +4.14% (Faster)
+===========================================================
+[Round 46] Testing: RNDV=32768, BCOPY=4096, ZCOPY=32768
+   -> Time: 44739.63 us | vs Default: -5.38% (Slower)
+===========================================================
+[Round 47] Testing: RNDV=32768, BCOPY=8192, ZCOPY=65536
+   -> Time: 44302.45 us | vs Default: -4.35% (Slower)
+===========================================================
+[Round 48] Testing: RNDV=32768, BCOPY=4096, ZCOPY=131072
+   -> Time: 43227.13 us | vs Default: -1.82% (Slower)
+===========================================================
+[Round 49] Testing: RNDV=131072, BCOPY=32768, ZCOPY=262144
+   -> Time: 43139.64 us | vs Default: -1.61% (Slower)
+===========================================================
+[Round 50] Testing: RNDV=32768, BCOPY=65536, ZCOPY=65536
+   -> Time: 40741.61 us | vs Default: +4.03% (Faster)
+
+============================================================
+>>> Test limit reached! Completed 50/50 tests.
+>>> Best result found in Round 19: 40153.49 us
+============================================================
+
+
+===========================================================
+>>> STRICT LIMIT: Test #51 skipped (limit: 50)
+>>> OpenTuner may try more tests, but they will all be skipped.
+===========================================================
+
+===========================================================
+>>> STRICT LIMIT: Test #52 skipped (limit: 50)
+>>> OpenTuner may try more tests, but they will all be skipped.
+===========================================================
+
+
+###########################################################
+                 OPTIMIZATION SUMMARY                      
+###########################################################
+ Total Tests Executed    : 52
+ Configured Limit        : 50
+ Best Parameters Found in [Round 19]:
+   RNDV : 32768
+   BCOPY: 4096
+   ZCOPY: 65536
+-----------------------------------------------------------
+ Baseline (Default) Time : 42454.65 us
+ Optimized (Best) Time   : 40153.49 us
+ Speedup                 : 1.06x
+ Improvement             : 5.42%
+###########################################################
+

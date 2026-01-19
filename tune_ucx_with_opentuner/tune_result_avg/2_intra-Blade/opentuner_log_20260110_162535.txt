@@ -1,0 +1,48 @@
+--> Log file created at: tune_result_avg/2_intra-Blade/opentuner_log_20260110_162535.txt
+
+[Init] Running Baseline Test (Default Parameters)...
+[Init] Baseline (Default) Time: 73634.77 us
+-----------------------------------------------------------
+
+===========================================================
+[Round 1] Testing: RNDV=65536, BCOPY=512, ZCOPY=512
+   -> Time: 78598.34 us | vs Default: -6.74% (Slower)
+
+============================================================
+>>> Test limit reached! Completed 1/1 tests.
+>>> Best result found in Round 1: 78598.34 us
+============================================================
+
+
+===========================================================
+>>> STRICT LIMIT: Test #2 skipped (limit: 1)
+>>> OpenTuner may try more tests, but they will all be skipped.
+===========================================================
+
+===========================================================
+>>> STRICT LIMIT: Test #3 skipped (limit: 1)
+>>> OpenTuner may try more tests, but they will all be skipped.
+===========================================================
+
+===========================================================
+>>> STRICT LIMIT: Test #4 skipped (limit: 1)
+>>> OpenTuner may try more tests, but they will all be skipped.
+===========================================================
+
+
+###########################################################
+                 OPTIMIZATION SUMMARY                      
+###########################################################
+ Total Tests Executed    : 4
+ Configured Limit        : 1
+ Best Parameters Found in [Round 1]:
+   RNDV : 65536
+   BCOPY: 512
+   ZCOPY: 512
+-----------------------------------------------------------
+ Baseline (Default) Time : 73634.77 us
+ Optimized (Best) Time   : 78598.34 us
+ Speedup                 : 0.94x
+ Improvement             : -6.74%
+###########################################################
+
