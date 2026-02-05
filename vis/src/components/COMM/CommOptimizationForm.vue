@@ -1,7 +1,7 @@
 <template>
   <div class="comm-optimization-content">
     <el-card>
-      <h4>通信调优（UCX with OpenTuner）</h4>
+      <h4> 通信插桩调优工具 </h4>
 
       <el-form
         ref="commFormRef"
@@ -11,59 +11,10 @@
         size="small"
         status-icon
       >
-        <el-divider content-position="left">基本配置</el-divider>
         <el-row :gutter="20">
           <el-col :span="12">
             <el-form-item label="作业名称" prop="name">
               <el-input v-model="commForm.name" placeholder="请输入作业名称" clearable />
-            </el-form-item>
-          </el-col>
-
-          <el-col :span="12">
-            <el-form-item label="分区" prop="partition">
-              <el-input v-model="commForm.partition" placeholder="例如：thcp3" clearable />
-            </el-form-item>
-          </el-col>
-
-          <el-col :span="24">
-            <el-form-item label="节点列表" prop="nodesText">
-              <el-input
-                v-model="commForm.nodesText"
-                placeholder="请输入节点名称，用逗号分隔，例如：cn27584,cn27585"
-                clearable
-              />
-              <div class="form-hint">至少需要2个节点（用于跨节点通信测试）</div>
-            </el-form-item>
-          </el-col>
-        </el-row>
-
-        <el-divider content-position="left">数据文件</el-divider>
-        <el-row :gutter="20">
-          <el-col :span="24">
-            <el-form-item label="原始数据目录名" prop="raw_dir_name">
-              <el-input
-                v-model="commForm.raw_dir_name"
-                placeholder='例如：astro_demo_16_node（将保存为 data/app_data/astro_demo_16_node）'
-                clearable
-              />
-              <div class="form-hint">
-                生成的 config 会写入：raw_file_dir = <b>data/app_data/{{ commForm.raw_dir_name || "..." }}</b>
-              </div>
-            </el-form-item>
-          </el-col>
-
-          <el-col :span="24">
-            <el-form-item label="processed 子目录" prop="processed_subdir">
-              <el-input
-                v-model="commForm.processed_subdir"
-                placeholder="例如：lammps（将写入 data/processed/lammps/目录名.csv）"
-                clearable
-              />
-              <div class="form-hint">
-                生成的 config 会写入：csv_file =
-                <b>data/processed/{{ commForm.processed_subdir || "..." }}/{{ commForm.raw_dir_name || "..." }}.csv</b>
-                （由调优程序生成临时数据，不需要用户上传）
-              </div>
             </el-form-item>
           </el-col>
 
@@ -81,16 +32,8 @@
               >
                 <el-icon class="el-icon--upload"><upload-filled /></el-icon>
                 <div class="el-upload__text">将文件拖到此处，或<em>点击上传</em></div>
-                <template #tip>
-                  <div class="el-upload__tip">
-                    支持一次上传多份 CSV。后端会先保存到本机，再批量上传到远端
-                    <b>data/app_data/{{ commForm.raw_dir_name || "目录名" }}/</b>
-                  </div>
-                </template>
               </el-upload>
-              <div v-if="commForm.raw_files.length" class="file-info">
-                已上传 {{ commForm.raw_files.length }} 个文件
-              </div>
+              <div v-if="commForm.raw_files.length" class="file-info">已上传 {{ commForm.raw_files.length }} 个文件</div>
             </el-form-item>
           </el-col>
 
@@ -101,60 +44,12 @@
                 placeholder="请输入通信类型编号，用逗号分隔，例如：55,56,57"
                 clearable
               />
-              <div class="form-hint">只处理CSV文件中comm_type列匹配这些值的记录</div>
-            </el-form-item>
-          </el-col>
-        </el-row>
-
-        <el-divider content-position="left">脚本配置</el-divider>
-        <el-row :gutter="20">
-          <el-col :span="12">
-            <el-form-item label="脚本路径">
-              <el-input
-                v-model="commForm.script_path"
-                placeholder="例如：src/scripts/run_latency_2_intra-Blade.sh"
-                clearable
-              />
             </el-form-item>
           </el-col>
 
-          <el-col :span="12">
-            <el-form-item label="结果目录">
-              <el-input v-model="commForm.result_dir" placeholder="例如：result/result_2_Intra-Blade" clearable />
-            </el-form-item>
-          </el-col>
-
-          <el-col :span="12">
-            <el-form-item label="保存Shell输出">
-              <el-switch v-model="commForm.save_shell_output" active-text="是" inactive-text="否" />
-            </el-form-item>
-          </el-col>
-        </el-row>
-
-        <el-divider content-position="left">OpenTuner调优配置</el-divider>
-        <el-row :gutter="20">
           <el-col :span="12">
             <el-form-item label="测试轮数" prop="test_limit">
               <el-input-number v-model="commForm.test_limit" :min="1" :max="1000" :precision="0" />
-              <div class="form-hint">调优程序将执行的测试轮数</div>
-            </el-form-item>
-          </el-col>
-
-          <el-col :span="12">
-            <el-form-item label="去重">
-              <el-switch v-model="commForm.no_dups" active-text="是" inactive-text="否" />
-            </el-form-item>
-          </el-col>
-
-          <el-col :span="12">
-            <el-form-item label="日志目录">
-              <el-input v-model="commForm.opentuner_log_dir" placeholder="例如：tune_result_avg" clearable />
-            </el-form-item>
-          </el-col>
-
-          <el-col :span="12">
-            <el-form-item label="保存OpenTuner日志">
-              <el-switch v-model="commForm.save_opentuner_log" active-text="是" inactive-text="否" />
             </el-form-item>
           </el-col>
         </el-row>
@@ -269,27 +164,13 @@ const bestParamsMetrics = computed(() => {
 
 const commForm = reactive({
   name: "",
-  partition: "thcp3",
-  nodesText: "cn27584,cn27585",
-  raw_dir_name: "astro_demo_16_node",
-  processed_subdir: "lammps",
   raw_files: [],
   comm_typesText: "55",
-  script_path: "src/scripts/run_latency_2_intra-Blade.sh",
-  result_dir: "result/result_2_Intra-Blade",
-  save_shell_output: false,
   test_limit: 50,
-  no_dups: true,
-  opentuner_log_dir: "tune_result_avg",
-  save_opentuner_log: true,
 });
 
 const commRules = {
   name: [{ required: true, message: "请输入作业名称", trigger: "blur" }],
-  partition: [{ required: true, message: "请输入分区名称", trigger: "blur" }],
-  nodesText: [{ required: true, message: "请输入节点列表", trigger: "blur" }],
-  raw_dir_name: [{ required: true, message: "请输入原始数据目录名", trigger: "blur" }],
-  processed_subdir: [{ required: true, message: "请输入 processed 子目录", trigger: "blur" }],
   raw_files: [{ required: true, type: "array", min: 1, message: "请至少上传 1 个 CSV 文件", trigger: "change" }],
   test_limit: [
     { required: true, type: "number", message: "请输入测试轮数", trigger: "change" },
@@ -337,11 +218,6 @@ const handleRawFileRemove = async (file) => {
 };
 
 const normalizeCommPayload = () => {
-  const nodes = commForm.nodesText
-    .split(",")
-    .map((n) => n.trim())
-    .filter(Boolean);
-
   const comm_types = commForm.comm_typesText
     .split(",")
     .map((c) => parseInt(c.trim()))
@@ -349,19 +225,21 @@ const normalizeCommPayload = () => {
 
   return {
     name: commForm.name,
-    partition: commForm.partition,
-    nodes,
-    raw_dir_name: commForm.raw_dir_name,
-    processed_subdir: commForm.processed_subdir,
     raw_files: commForm.raw_files.map(({ file_path, filename, file_id }) => ({ file_path, filename, file_id })),
     comm_types: comm_types.length > 0 ? comm_types : [55],
-    script_path: commForm.script_path,
-    result_dir: commForm.result_dir,
-    save_shell_output: commForm.save_shell_output,
     test_limit: commForm.test_limit,
-    no_dups: commForm.no_dups,
-    opentuner_log_dir: commForm.opentuner_log_dir,
-    save_opentuner_log: commForm.save_opentuner_log,
+
+    // 兼容后端可能仍要求的字段：这里给出默认值，避免因前端删字段导致任务提交失败
+    partition: "thcp3",
+    nodes: [],
+    raw_dir_name: "",
+    processed_subdir: "",
+    script_path: "",
+    result_dir: "",
+    save_shell_output: false,
+    no_dups: true,
+    opentuner_log_dir: "",
+    save_opentuner_log: true,
   };
 };
 
@@ -479,19 +357,9 @@ const clearOutput = () => {
 
 const resetCommForm = () => {
   commForm.name = "";
-  commForm.partition = "thcp3";
-  commForm.nodesText = "cn27584,cn27585";
-  commForm.raw_dir_name = "astro_demo_16_node";
-  commForm.processed_subdir = "lammps";
   commForm.raw_files = [];
   commForm.comm_typesText = "55";
-  commForm.script_path = "src/scripts/run_latency_2_intra-Blade.sh";
-  commForm.result_dir = "result/result_2_Intra-Blade";
-  commForm.save_shell_output = false;
   commForm.test_limit = 50;
-  commForm.no_dups = true;
-  commForm.opentuner_log_dir = "tune_result_avg";
-  commForm.save_opentuner_log = true;
 
   outputLog.value = "";
   resultData.value = null;
@@ -515,11 +383,6 @@ onUnmounted(() => {
 <style scoped>
 .comm-optimization-content {
   padding: 20px;
-}
-.form-hint {
-  font-size: 12px;
-  color: #909399;
-  margin-top: 5px;
 }
 .file-info {
   margin-top: 10px;

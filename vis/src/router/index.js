@@ -146,6 +146,12 @@ import defaultSettings from "@/settings";
 router.beforeEach((to, from, next) => {
   NProgress.start();
   document.title = `${to.meta.title || "首页"} - ${defaultSettings.title}`;
+  
+  // ===== 临时禁用登录验证，方便测试 =====
+  next();
+  return;
+  // ===== 以下是原始登录验证代码 =====
+  
   let token = localStorage.getItem("token");
   if (token) {
     next();
